@@ -6,7 +6,11 @@ const noteSchema = mongoose.Schema(
             required: true,
             ref: 'User',
         },
-        note: {
+        title:{
+            type: String,
+            required: true,
+        },
+        description: {
             type: String,
             required: true,
         }

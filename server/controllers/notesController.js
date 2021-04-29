@@ -3,9 +3,9 @@ const User = require('../models/userModel')
 
 const addNotes=async(req,res)=>{
     try{
-        const {note}=req.body
+        const {title,description}=req.body
         const user=req.user._id
-        const obj=new Notes({note,user})
+        const obj=new Notes({title,description,user})
         const createdNote=await obj.save()
         res.status(201).json(createdNote)
     }catch(e){
